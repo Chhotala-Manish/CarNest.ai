@@ -8,7 +8,7 @@ import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, D
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import useFetch from "@/hooks/use-fetch";
-import { CarIcon, Eye, Loader2, MoreHorizontal, Plus, Star, StarOff, Trash2 } from "lucide-react";
+import { CarIcon, Eye, Loader2, MoreHorizontal, Plus, Search, Star, StarOff, Trash2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { Input } from "@/components/ui/input";
 import { formatCurrency } from "@/lib/helpers";
@@ -80,7 +80,7 @@ import Image from "next/image";
       toast.success("Car updated successfully");
       fetchCars(search);
     }
-  }, [deleteResult, updateResult, search]);
+  }, [deleteResult, updateResult]);
 
   // Handle search submit
   const handleSearchSubmit = (e) => {
@@ -148,7 +148,7 @@ import Image from "next/image";
         {/* Simple Search Form */}
         <form onSubmit={handleSearchSubmit} className="flex w-full sm:w-auto">
           <div className="relative flex-1">
-            <search className="absolute left-2.5 top-2.5 h-4 w-4 text-gray-500" />
+            <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-gray-500" />
             <Input
               type="search"
               placeholder="Search cars..."
